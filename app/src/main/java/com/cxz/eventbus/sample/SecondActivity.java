@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.cxz.eventbuslib.EventBus;
+import com.cxz.livedatabus.LiveDataBus;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -17,9 +18,9 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EventBus.getDefault().post(new EventBean("1111", "2222"));
+                LiveDataBus.get().with("key_test").setValue("3333");
             }
         });
-
 
     }
 }
